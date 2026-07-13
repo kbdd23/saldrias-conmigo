@@ -615,6 +615,12 @@ body {
     padding: 24px 20px 0;
   }
 
+  #state-activities .btn-primary,
+  #state-date .btn-primary,
+  #state-time .btn-primary {
+    margin-bottom: 40px;
+  }
+
   .activity-card {
     padding: 22px 12px;
   }
@@ -672,6 +678,12 @@ body {
   #state-date.active,
   #state-time.active {
     padding: 16px 12px 0;
+  }
+
+  #state-activities .btn-primary,
+  #state-date .btn-primary,
+  #state-time .btn-primary {
+    margin-bottom: 32px;
   }
 
   .activity-card {
