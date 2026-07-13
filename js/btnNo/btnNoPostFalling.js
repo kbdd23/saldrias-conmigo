@@ -63,6 +63,8 @@ class BtnNoPostFalling {
     this.btnEl.style.transition = 'none';
     this.btnEl.style.left = '20px';
     this.btnEl.style.top = '20px';
+    this.btnEl.style.right = '';
+    this.btnEl.style.bottom = '';
 
     // Sí: animación suave hacia donde estaba No (esquina inf-der)
     this.btnSiReplace.replaceTo(prevPos.x, prevPos.y, 'right-bottom');

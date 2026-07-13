@@ -27,6 +27,9 @@ class BtnNoTrapped {
 
     this._onSiMouseDown = () => {
       this.btnSiVibrate.stop();
+      // En el momento que arrastras Sí, No se vuelve fantasma
+      // pero sigue clickeable para que puedas terminarlo
+      this.btnNoEl.classList.add('conquered');
       if (this._onSiDrag) this._onSiDrag();
     };
   }
@@ -37,6 +40,9 @@ class BtnNoTrapped {
   activate() {
     if (this._active) return;
     this._active = true;
+
+    // Asegurar que No empiece sin estado fantasma
+    this.btnNoEl.classList.remove('conquered');
 
     const siRect = this.btnSiEl.getBoundingClientRect();
     const siR = window.innerWidth - siRect.right;
@@ -71,6 +77,7 @@ class BtnNoTrapped {
     this.btnSiVibrate.stop();
     this.btnSiEl.removeEventListener('mousedown', this._onSiMouseDown);
     this.btnNoEl.removeEventListener('click', this._onClick);
+    this.btnNoEl.classList.remove('conquered');
     this.btnNoEl.style.zIndex = '';
     this.btnNoEl.style.pointerEvents = '';
     this.btnNoEl.style.cursor = '';
@@ -104,8 +111,7 @@ class BtnNoTrapped {
     this.btnNoEl.removeEventListener('click', this._onClick);
     this.btnSiEl.removeEventListener('mousedown', this._onSiMouseDown);
 
-    // No se vuelve "conquistado" — visualmente intocable
-    this.btnNoEl.classList.add('conquered');
+    // Deshabilitar No por completo
     this.btnNoEl.style.pointerEvents = 'none';
 
     if (this._onFinish) this._onFinish();
