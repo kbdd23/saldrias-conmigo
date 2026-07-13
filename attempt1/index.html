@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Saldrías Conmigo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <button id="dark-toggle" aria-label="Alternar modo oscuro">🌙</button>
+
+    <!-- STATE: PROMPT -->
+    <section id="state-prompt" class="state active">
+      <div class="hearts-bg" id="hearts-bg"></div>
+      <div class="prompt-card">
+        <h1>¿Saldrías conmigo?</h1>
+        <p class="subtitle">Una pregunta completamente normal para alguien especial.</p>
+        <div class="button-group">
+          <button id="btn-yes" class="btn btn-yes">¡Sí!</button>
+          <button id="btn-no" class="btn btn-no">No</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATE: ACTIVITIES -->
+    <section id="state-activities" class="state">
+      <div class="state-header">
+        <h2>¿Qué te gustaría hacer?</h2>
+        <p class="subtitle">Elige una o varias actividades</p>
+      </div>
+      <div class="activities-grid" id="activities-grid"></div>
+      <button id="btn-activities-next" class="btn btn-primary" disabled>Siguiente</button>
+    </section>
+
+    <!-- STATE: DATETIME -->
+    <section id="state-datetime" class="state">
+      <div class="state-header">
+        <h2>¿Cuándo te parece bien?</h2>
+        <p class="subtitle">Elige fecha y hora</p>
+      </div>
+      <div class="datetime-grid">
+        <div class="datetime-column">
+          <h3>📅 Fecha</h3>
+          <div class="date-options" id="date-options"></div>
+        </div>
+        <div class="datetime-column">
+          <h3>⏰ Hora</h3>
+          <div class="time-options" id="time-options"></div>
+        </div>
+      </div>
+      <button id="btn-datetime-next" class="btn btn-primary" disabled>Confirmar</button>
+    </section>
+
+    <!-- STATE: CONFIRMATION -->
+    <section id="state-confirmation" class="state">
+      <div class="confetti-container" id="confetti-container"></div>
+      <div class="confirmation-card">
+        <h1>✨ ¡Es una cita! ✨</h1>
+        <div class="confirmation-details" id="confirmation-details"></div>
+        <p class="confirmation-message">Ya no hay vuelta atrás, hermosa. Te espero ❤️</p>
+        <button id="btn-reset" class="btn btn-primary">Empezar de nuevo</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/sc-core.js"></script>
+  <script src="js/sc-theme.js"></script>
+  <script src="js/sc-hearts.js"></script>
+  <script src="js/sc-confetti.js"></script>
+  <script src="js/sc-dodging-btn.js"></script>
+  <script src="js/sc-activities.js"></script>
+  <script src="js/sc-datetime.js"></script>
+  <script src="js/sc-app.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

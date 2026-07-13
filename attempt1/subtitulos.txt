@@ -1,0 +1,9 @@
+Inicio: "Una pregunta completamente normal para alguien especial.
+1er click al No: "Será muy divertido!"
+Persecución: "Casi..." "Uops, intentalo denuevo.", "Sorry..Didn´t catch that", "Otra vez, porfavor?"
+Sí acechando: "Quizás quisiste decir...", "Te tengo en la mira...", "Y esquivaba, y esquivaba...", "Segura?", "Eres libre de elegir lo que más quieras"
+Escondite: "Elige una opción. ^3^"
+Caída: "Ala!"
+1er click Post caída "¿Otra vez?... Fine..."
+Persecución: [se repite desde aquí]
+
