@@ -360,13 +360,39 @@ body {
   margin-top: 4px;
 }
 
-/* Estados con scroll */
+/* Estados con scroll interno (contenido scrollea, botón queda abajo) */
 #state-activities.active,
 #state-date.active,
 #state-time.active {
   justify-content: flex-start;
-  padding-top: 32px;
+  padding: 32px 48px 0;
+  overflow: hidden;
+}
+
+#state-activities .state-header,
+#state-date .state-header,
+#state-time .state-header {
+  flex-shrink: 0;
+}
+
+/* Contenido scrolleable */
+#state-activities .activities-grid,
+#state-date .picker-options,
+#state-time .picker-options {
+  flex: 1;
   overflow-y: auto;
+  min-height: 0;
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+/* Botón siempre visible al fondo */
+#state-activities .btn-primary,
+#state-date .btn-primary,
+#state-time .btn-primary {
+  flex-shrink: 0;
+  margin-top: 12px;
+  margin-bottom: 20px;
 }
 
 /* =============================================
@@ -376,6 +402,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
   gap: 16px;
   width: 100%;
   max-width: 680px;
@@ -429,6 +457,7 @@ body {
   max-width: 540px;
   margin-top: 24px;
   flex-shrink: 0;
+  justify-content: flex-start;
 }
 
 .option-btn {
@@ -580,6 +609,12 @@ body {
     padding: 16px 36px;
   }
 
+  #state-activities.active,
+  #state-date.active,
+  #state-time.active {
+    padding: 24px 20px 0;
+  }
+
   .activity-card {
     padding: 22px 12px;
   }
@@ -631,6 +666,12 @@ body {
 
   .btn-no {
     padding: 14px 28px;
+  }
+
+  #state-activities.active,
+  #state-date.active,
+  #state-time.active {
+    padding: 16px 12px 0;
   }
 
   .activity-card {
